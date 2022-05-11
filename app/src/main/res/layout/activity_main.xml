@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Add or Edit Item"
+                app:layout_constraintEnd_toEndOf="@+id/etCount"
+                app:layout_constraintHorizontal_bias="0.448"
+                app:layout_constraintStart_toStartOf="@+id/tvSelectItem"
+                app:layout_constraintTop_toBottomOf="@+id/tvSelectItem" />
+
+            <TextView
+                android:id="@+id/tvSelectItem"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@color/purple_200"
+                android:gravity="center_vertical"
+                android:hint="Select Item"
+                android:padding="10dp"
+                android:textColorHint="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/etCount"
+                app:layout_constraintEnd_toStartOf="@+id/etCount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etCount"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:ems="10"
+                android:hint="Count"
+                android:inputType="number"
+                android:maxLength="3"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvItemList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/etCount"
+                app:layout_constraintStart_toStartOf="@+id/tvSelectItem"
+                app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
+
+            <RadioGroup
+                android:id="@+id/rgCashCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/etCount"
+                app:layout_constraintStart_toStartOf="@+id/tvSelectItem"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <RadioButton
+                    android:id="@+id/rbCash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Cash" />
+
+                <RadioButton
+                    android:id="@+id/rbCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Card" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/etDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Discount"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="@+id/tvSelectItem"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <RadioGroup
+                android:id="@+id/rgDiscount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/etCount"
+                app:layout_constraintStart_toEndOf="@+id/etDiscount"
+                app:layout_constraintTop_toTopOf="@+id/etDiscount">
+
+                <RadioButton
+                    android:id="@+id/rbDiscountPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Precentage" />
+
+                <RadioButton
+                    android:id="@+id/rbDiscountAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Amount" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Total : 0.00"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/tvSelectItem"
+                app:layout_constraintTop_toBottomOf="@+id/etDiscount" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Payment Method"
+                app:layout_constraintStart_toStartOf="@+id/tvSelectItem"
+                app:layout_constraintTop_toBottomOf="@+id/tvItemList" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Discount"
+                app:layout_constraintStart_toStartOf="@+id/tvSelectItem"
+                app:layout_constraintTop_toBottomOf="@+id/rgCashCard" />
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Clear Bill"
+                app:layout_constraintEnd_toEndOf="@+id/etCount"
+                app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
